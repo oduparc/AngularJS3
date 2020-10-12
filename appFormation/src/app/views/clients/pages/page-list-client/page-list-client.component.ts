@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageListClientComponent implements OnInit {
 
+  public welcome: string;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.welcome = 'List of clients';
   }
 
 }
