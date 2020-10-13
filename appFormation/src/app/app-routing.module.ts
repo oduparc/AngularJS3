@@ -22,6 +22,6 @@ const routes: Routes = [
 export class AppRoutingModule {
   constructor(router: Router) {
     const replacer = (key, value) => (typeof value === 'function') ? value.name : value;
-    console.log('Routes: ', JSON.stringify(router.config, replacer, 1))
+    // console.log('Routes: ', JSON.stringify(router.config, replacer, 1))
   }
 }
