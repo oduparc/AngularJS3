@@ -1,6 +1,3 @@
-<!-- <p> {{ headers | json }}</p>
-<p> {{ collection | json }}</p> -->
-
 <table class="table">
   <thead>
     <tr>
@@ -12,10 +9,12 @@
     <tr *ngFor="let c of collectionOrder">
       <td>{{ c.typePresta }}</td>
       <td>{{ c.client }}</td>
-      <td>{{ c.nbJours }}</td>
+      <td>{{ c.nbJours | days2 }}</td>
+      <!-- <td>{{ c | days }}</td> -->
       <td>{{ c.tjmHT }}</td>
-      <td>{{ c.totalHT() }}</td>
-      <td>{{ c.totalTTC() }}</td>
+      <td>{{ c | total }}</td>
+      <td>{{ c | total: 'TTC' | currency: 'EUR'}}</td>
+      <td>{{ c.date | date: 'dd-MM-yyyy' }}</td>
       <td>{{ c.state }}</td>
     </tr>
   </tbody>
