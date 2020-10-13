@@ -13,6 +13,7 @@ export class PageListClientComponent implements OnInit {
 
   public welcome: string;
   public collectionClients: Client[];
+  public headers: string[];
 
   constructor(
     private cs: ClientsService
@@ -20,6 +21,7 @@ export class PageListClientComponent implements OnInit {
 
   ngOnInit(): void {
     this.welcome = 'List of clients';
+    this.headers = [ 'Id', 'Name', 'CA', 'Commentaire', 'TVA', 'Total', 'Etat']
     this.cs.collection.subscribe(datas => {
       this.collectionClients = datas;
       console.log(this.collectionClients)
