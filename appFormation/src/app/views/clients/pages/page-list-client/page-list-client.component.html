@@ -1,4 +1,11 @@
-<app-table-light
-  [collectionClient]="collectionClients"
-  [headers]="headers">
+<app-table-light [headers]="headers">
+  <tr *ngFor="let c of collectionClients">
+    <td>{{ c.id }}</td>
+    <td>{{ c.name }}</td>
+    <td>{{ c.ca }}</td>
+    <td>{{ c.comment }}</td>
+    <td>{{ c.tva }}</td>
+    <td>{{ c.total() | currency: 'EUR' }}</td>
+    <td>{{ c.state }}</td>
+  </tr>
 </app-table-light>

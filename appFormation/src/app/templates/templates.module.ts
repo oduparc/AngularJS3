@@ -8,8 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [TableLightComponent],
   imports: [
-    CommonModule,
-    SharedModule
+    CommonModule
   ], exports: [
     TableLightComponent
   ]
