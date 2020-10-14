@@ -4,7 +4,7 @@
       "tjmHT": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "CONFIRMED",
+      "state": "CANCEL",
       "typePresta": "Formation",
       "client": "M2i",
       "comment": "merci m2i",
@@ -26,7 +26,7 @@
       "tjmHT": 500,
       "nbJours": 1,
       "tva": 20,
-      "state": "CANCEL",
+      "state": "OPTION",
       "typePresta": "Formation",
       "client": "nemesys",
       "comment": "",
@@ -47,16 +47,16 @@
   ],
   "clients": [
     {
-      "state": "Active",
       "tva": 20,
+      "state": "Active",
       "name": "Olivier",
       "ca": 8000,
       "comment": "Un comment pour client Olivier",
       "id": 1
     },
     {
-      "state": "Active",
       "tva": 20,
+      "state": "Inactive",
       "name": "Modis",
       "ca": 120000,
       "comment": "Un comment pour client modis",

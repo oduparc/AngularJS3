@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Order } from 'src/app/shared/models/order.model';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
+import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 
 
 @Injectable({
@@ -45,4 +46,29 @@ export class OrdersService {
       })
     )
   }
+
+  // Update
+  public update(order: Order): Observable<Order> {
+    return this.http.put<Order>(`${this.urlApi}orders/${order.id}`, order)
+  }
+
+  // Update State
+  public updateState(order: Order, state: StateOrder): Observable<Order> {
+    const obj = new Order({...order});
+    obj.state = state;
+    // Send microservice
+    return this.update(obj);
+  }
+
+  // Get with filter by state
+  public getFilterByState(state: StateOrder): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.urlApi}orders`).pipe(
+      map(datas => datas
+        .filter(data => data.state === state)
+          .map(filterData => new Order(filterData))
+        )
+    )
+  }
+
+
 }
