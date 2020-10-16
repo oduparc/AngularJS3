@@ -1,0 +1,31 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="tva">TVA</label>
+      <input formControlName="tva" type="number" class="formControl" id="tva">
+    </div>
+    <div>
+      <label for="state">Etat</label>
+      <select formControlName="state" class="formControl" id="state">
+        <option *ngFor="let s of states" [ngValue]="s">{{ s }}</option>
+      </select>
+    </div>
+
+    <div class="formGroup">
+      <label for="name">Name</label>
+      <input formControlName="name" type="text" class="formControl" id="name">
+      <div *ngIf="form.get('name').errors?.maxlength && form.get('name').touched" class="alert alert-danger">Maximum 10 chars</div>
+    </div>
+
+    <div>
+      <label for="ca">Client</label>
+      <input formControlName="ca" type="number" class="formControl" id="ca">
+    </div>
+    <div>
+      <label for="comment">Commentaire</label>
+      <textarea formControlName="comment" class="formControl" id="comment"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Envoyer</button>
+  </form>
+</div>

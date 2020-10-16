@@ -1,0 +1,43 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="formGroup">
+      <label for="typePresta">Type Presta</label>
+      <input formControlName="typePresta" type="text" class="formControl" id="typePresta">
+    </div>
+    <div *ngIf="form.get('typePresta').invalid && form.get('typePresta').touched" class="alert alert-danger">Champs requis</div>
+    <div>
+      <label for="client">Client</label>
+      <input formControlName="client" type="text" class="formControl" id="client">
+    </div>
+    <div *ngIf="form.get('client').errors?.required && form.get('client').touched" class="alert alert-danger">Champs vides</div>
+    <div *ngIf="form.get('client').errors?.minlength && form.get('client').touched" class="alert alert-danger">Minimum 3 chars</div>
+    <div>
+      <label for="nbJours">Nombre Jours</label>
+      <input formControlName="nbJours" type="number" class="formControl" id="nbJours">
+    </div>
+    <div>
+      <label for="tjmHT">TJM (HT)</label>
+      <input formControlName="tjmHT" type="number" class="formControl" id="tjmHT">
+    </div>
+    <div>
+      <label for="tva">TVA</label>
+      <input formControlName="tva" type="number" class="formControl" id="tva">
+    </div>
+    <div>
+      <label for="comment">Commentaire</label>
+      <textarea formControlName="comment" class="formControl" id="comment"></textarea>
+    </div>
+    <div>
+      <label for="date">Date</label>
+      <input formControlName="date" type="date" class="formControl" id="date">
+    </div>
+    <div>
+      <label for="state">Etat</label>
+      <select formControlName="state" class="formControl" id="state">
+        <option *ngFor="let s of states" [ngValue]="s">{{ s }}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Envoyer</button>
+  </form>
+</div>

@@ -20,12 +20,17 @@ export class PageListClientComponent implements OnInit {
   public btn: BtnI;
   public btn2: BtnI;
   public filtered: boolean;
+  public a: string;
+  public b: string;
 
   constructor(
     private cs: ClientsService
   ) { }
 
   ngOnInit(): void {
+    this.a = "Clients";
+    this.b = "List of Clients";
+
     this.filtered = false;
     this.btn = { label: 'Add Client', route: 'add' }
     this.btn2 = { label: 'Filter', action: true }

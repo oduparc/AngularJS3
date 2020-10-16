@@ -5,15 +5,19 @@ import { ClientsRoutingModule } from './clients-routing.module';
 import { PageListClientComponent } from './pages/page-list-client/page-list-client.component';
 import { TemplatesModule } from 'src/app/templates/templates.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FormAddClientComponent } from './components/form-add-client/form-add-client.component';
+import { PageAddClientComponent } from './pages/page-add-client/page-add-client.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [PageListClientComponent],
+  declarations: [PageListClientComponent, FormAddClientComponent, PageAddClientComponent],
   imports: [
     CommonModule,
     ClientsRoutingModule,
     TemplatesModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class ClientsModule { }

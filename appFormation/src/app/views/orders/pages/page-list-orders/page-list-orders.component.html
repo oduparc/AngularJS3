@@ -1,5 +1,9 @@
-<app-table-light *ngIf="collectionOrderObservable | async as collection"
-  [headers]="collectionHeaders">
+
+
+
+<app-titre-a [title] = "title" [subtitle] = "subtitle">
+
+<app-table-light *ngIf="collectionOrderObservable | async as collection" [headers]="collectionHeaders">
 
   <tr *ngFor="let c of collection">
     <td>{{ c.typePresta }}</td>
@@ -19,9 +23,12 @@
     </td>
   </tr>
 
-</app-table-light>
-
-
 <app-btn [label]="btnRoute.label" [route]="btnRoute.route"></app-btn>
 <app-btn [label]="btnHref.label" [href]="btnHref.href"></app-btn>
 <app-btn [label]="btnAction.label" [action]="btnAction.action" (clicked)="openPopup()"></app-btn>
+
+
+</app-table-light>
+</app-titre-a>
+
+
